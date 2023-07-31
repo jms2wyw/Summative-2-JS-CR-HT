@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e545b8a0-7170-4f9f-b324-96628d4f12a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/bookstore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bookstore/pom.xml" afterDir="false" />
+    <list default="true" id="b3828a4b-8a32-4c76-a922-c2bc20c56cba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookstore/HELP.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +22,7 @@
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 3
 }]]></component>
-  <component name="ProjectId" id="2TMCrzLs1IJol74EVfFfIJ0MyRm" />
+  <component name="ProjectId" id="2TMG1UaLvKTjlLDuH4n5iSbzK1S" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -29,18 +30,18 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/dev/NetflixPathways/SummativeChallenges/Summative-2-JS-CR-HT"
+    "git-widget-placeholder": "Book-Api",
+    "last_opened_file_path": "C:/dev/NetflixPathways/SummativeChallenges/Summative-2-JS-CR-HT/bookstore"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e545b8a0-7170-4f9f-b324-96628d4f12a3" name="Changes" comment="" />
-      <created>1690843765870</created>
+      <changelist id="b3828a4b-8a32-4c76-a922-c2bc20c56cba" name="Changes" comment="" />
+      <created>1690845320947</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1690843765870</updated>
+      <updated>1690845320947</updated>
     </task>
     <servers />
   </component>
