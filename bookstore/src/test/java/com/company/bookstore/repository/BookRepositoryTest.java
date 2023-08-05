@@ -45,7 +45,6 @@ public class BookRepositoryTest {
         author = authorRepository.save(author);
 
         Publisher publisher = new Publisher();
-        publisher.setPublisherId(4);
         publisher.setName("BigPub");
         publisher.setStreet("Main St");
         publisher.setCity("Boston");
@@ -83,7 +82,6 @@ public class BookRepositoryTest {
         author = authorRepository.save(author);
 
         Publisher publisher = new Publisher();
-        publisher.setPublisherId(4);
         publisher.setName("BigPub");
         publisher.setStreet("Main St");
         publisher.setCity("Boston");
@@ -131,7 +129,6 @@ public class BookRepositoryTest {
         author = authorRepository.save(author);
 
         Publisher publisher = new Publisher();
-        publisher.setPublisherId(4);
         publisher.setName("BigPub");
         publisher.setStreet("Main St");
         publisher.setCity("Boston");
@@ -187,7 +184,6 @@ public class BookRepositoryTest {
         author = authorRepository.save(author);
 
         Publisher publisher = new Publisher();
-        publisher.setPublisherId(4);
         publisher.setName("BigPub");
         publisher.setStreet("Main St");
         publisher.setCity("Boston");
@@ -228,7 +224,6 @@ public class BookRepositoryTest {
         author = authorRepository.save(author);
 
         Publisher publisher = new Publisher();
-        publisher.setPublisherId(4);
         publisher.setName("BigPub");
         publisher.setStreet("Main St");
         publisher.setCity("Boston");
@@ -282,7 +277,6 @@ public class BookRepositoryTest {
         secondAuth = authorRepository.save(secondAuth);
 
         Publisher publisher = new Publisher();
-        publisher.setPublisherId(4);
         publisher.setName("BigPub");
         publisher.setStreet("Main St");
         publisher.setCity("Boston");
