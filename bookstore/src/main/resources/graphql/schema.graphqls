@@ -1,0 +1,34 @@
+
+type Publisher {
+    id: ID!
+    name: String!
+    street: String!
+    city: String!
+    state: String!
+    postalCode: String!
+    phone: String!
+    email: String!
+    }
+
+
+type Author {
+    id: ID!
+    firstName: String!
+    lastName: String!
+}
+
+
+type Book {
+    title: String!
+    isbn: String!
+    author(id: ID!): Author
+    publisher(id: ID!): Publisher
+    price: Float!
+}
+
+type Query {
+
+    findPublisherById(id:ID!): Publisher
+    findBookById(id:ID!): Book
+}
+
