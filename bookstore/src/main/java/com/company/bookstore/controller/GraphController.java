@@ -28,6 +28,7 @@ public class GraphController {
     public Publisher findPublisherById(@Argument int id){
         Optional<Publisher> target = publisherRepository.findById(id);
 
+        return target.isPresent() ? target.get() : null;
     }
 
     @QueryMapping
