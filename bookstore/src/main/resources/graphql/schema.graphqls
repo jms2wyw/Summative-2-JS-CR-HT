@@ -1,8 +1,19 @@
+type Author {
+    id: ID!
+    firstName: String!
+    lastName: String!
+}
+
+type Publisher {
+    id: ID!
+    name: String!
+}
+
 type Book {
     title: String!
     isbn: String!
-    #author(id: ID!): Author
-    #publisher(id: ID!): Publisher
+    author(id: ID!): Author
+    publisher(id: ID!): Publisher
     price: Float!
 }
 

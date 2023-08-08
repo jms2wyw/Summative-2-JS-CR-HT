@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Component
+@Repository
 public interface BookRepository  extends JpaRepository<Book, Integer> {
     List<Book> findAllByAuthorId(int id);
 }
