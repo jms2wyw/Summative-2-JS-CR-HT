@@ -8,7 +8,6 @@ type Publisher {
     postalCode: String!
     phone: String!
     email: String!
-
     }
 
 
@@ -28,11 +27,8 @@ type Book {
 }
 
 type Query {
-    findBookById(id:ID!): Book
-}
-
-type Query {
 
     findPublisherById(id:ID!): Publisher
+    findBookById(id:ID!): Book
 }
 
