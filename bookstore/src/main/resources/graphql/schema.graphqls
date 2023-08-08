@@ -21,8 +21,8 @@ type Author {
 type Book {
     title: String!
     isbn: String!
-    #author(id: ID!): Author
-    #publisher(id: ID!): Publisher
+    author(id: ID!): Author
+    publisher(id: ID!): Publisher
     price: Float!
 }
 
