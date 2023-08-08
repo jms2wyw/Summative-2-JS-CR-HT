@@ -21,13 +21,13 @@ type Author {
 type Book {
     title: String!
     isbn: String!
-    author(id: ID!): Author
-    publisher(id: ID!): Publisher
+    #author(id: ID!): Author
+    #publisher(id: ID!): Publisher
     price: Float!
 }
 
 type Query {
-
+    findAuthorById(id:ID!) : Author
     findPublisherById(id:ID!): Publisher
     findBookById(id:ID!): Book
 }

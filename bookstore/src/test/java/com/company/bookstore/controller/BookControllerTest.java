@@ -48,7 +48,7 @@ public class BookControllerTest {
     @BeforeEach
     private void setup() {
         Author author = new Author();
-        author.setAuthorId(1);
+        author.setId(1);
         author.setFirstName("John");
         author.setLastName("Smith");
         author.setStreet("83rd Street");
@@ -59,7 +59,7 @@ public class BookControllerTest {
         author.setEmail("smith@mail.com");
 
         Author secondAuth = new Author();
-        secondAuth.setAuthorId(2);
+        secondAuth.setId(2);
         secondAuth.setFirstName("NotJohn");
         secondAuth.setLastName("NotSmith");
         secondAuth.setStreet("MainSt");
@@ -83,7 +83,7 @@ public class BookControllerTest {
         book.setBookId(1);
         book.setIsbn("12345");
         book.setPublishDate(LocalDate.of(2020, 1, 1));
-        book.setAuthorId(author.getAuthorId());
+        book.setBookId(author.getId());
         book.setTitle("The Book");
         book.setPublisherId(publisher.getPublisherId());
         book.setPrice(new BigDecimal("12.99"));
@@ -92,7 +92,7 @@ public class BookControllerTest {
         secondBook.setBookId(2);
         secondBook.setIsbn("54321");
         secondBook.setPublishDate(LocalDate.of(2020, 2, 1));
-        secondBook.setAuthorId(author.getAuthorId());
+        secondBook.setBookId(author.getId());
         secondBook.setTitle("The Sequel");
         secondBook.setPublisherId(publisher.getPublisherId());
         secondBook.setPrice(new BigDecimal("29.99"));
@@ -101,7 +101,7 @@ public class BookControllerTest {
         thirdBook.setBookId(3);
         thirdBook.setIsbn("67890");
         thirdBook.setPublishDate(LocalDate.of(2020, 3, 1));
-        thirdBook.setAuthorId(secondAuth.getAuthorId());
+        thirdBook.setBookId(secondAuth.getId());
         thirdBook.setTitle("Three Times");
         thirdBook.setPublisherId(publisher.getPublisherId());
         thirdBook.setPrice(new BigDecimal("9.99"));
