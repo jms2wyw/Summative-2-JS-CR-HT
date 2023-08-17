@@ -20,7 +20,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-
 @SpringBootTest
 @AutoConfigureMockMvc
 public class AuthorControllerTest {
@@ -33,18 +32,33 @@ public class AuthorControllerTest {
     private ObjectMapper mapper = new ObjectMapper();
     private List<Author> authorList = new ArrayList<>();
 
-    @BeforeEach
-    public void setUp() {
 
+    private ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule())
+            .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+
+    @BeforeEach
+    private void setup() {
         Author author = new Author();
         author.setId(1);
-        author.setAuthorName("J.K. Rowling");
-        author.setBiography("J.K. Rowling is a British author born on July 31, 1965. She is famous for writing the \"Harry Potter\" series, which gained worldwide acclaim and inspired a generation of readers. Her storytelling and imagination have left a lasting impact on literature, making her a literary icon.");
+        author.setFirstName("John");
+        author.setLastName("Smith");
+        author.setStreet("83rd Street");
+        author.setCity("Queens");
+        author.setState("NY");
+        author.setPostalCode("11370");
+        author.setPhone("646-212-9640");
+        author.setEmail("smith@mail.com");
 
         Author author2 = new Author();
         author2.setId(2);
-        author2.setAuthorName("Haruki Murakami");
-        author2.setBiography("Haruki Murakami is a celebrated Japanese novelist born on January 12, 1949. His captivating works, blending surrealism and existential themes, have earned him global acclaim and a dedicated fanbase.");
+        author2.setFirstName("NotJohn");
+        author2.setLastName("NotSmith");
+        author2.setStreet("MainSt");
+        author2.setCity("NotQueens");
+        author2.setState("OH");
+        author2.setPostalCode("Not11370");
+        author2.setPhone("000-000-0000");
+        author2.setEmail("not@mail.com");
 
         authorList.add(author);
         authorList.add(author2);
@@ -53,11 +67,9 @@ public class AuthorControllerTest {
     // Testing GET /authors
     @Test
     public void shouldReturnAllAuthorsInCollection() throws Exception {
-
         // ARRANGE
         // Convert Java object to JSON
         String outputJson = mapper.writeValueAsString(authorList);
-
         // ACT
         mockMvc.perform(get("/authors"))                // Perform the GET request
                 .andDo(print())                          // Print results to console
@@ -67,11 +79,18 @@ public class AuthorControllerTest {
     // Testing POST /authors
     @Test
     public void shouldReturnNewAuthor() throws Exception {
-        Author inputAuthor = new Author();
-        inputAuthor.setAuthorName("J.K. Rowling");
-        inputAuthor.setBiography("J.K. Rowling is a British author born on July 31, 1965. She is famous for writing the \"Harry Potter\" series, which gained worldwide acclaim and inspired a generation of readers. Her storytelling and imagination have left a lasting impact on literature, making her a literary icon.");
+        Author author = new Author();
+        author.setId(1);
+        author.setFirstName("John");
+        author.setLastName("Smith");
+        author.setStreet("83rd Street");
+        author.setCity("Queens");
+        author.setState("NY");
+        author.setPostalCode("11370");
+        author.setPhone("646-212-9640");
+        author.setEmail("smith@mail.com");
 
-        String inputJson = mapper.writeValueAsString(inputAuthor);
+        String inputJson = mapper.writeValueAsString(author);
 
         mockMvc.perform(post("/authors")
                                 .content(inputJson)
@@ -85,18 +104,30 @@ public class AuthorControllerTest {
     @Test
     public void shouldReturnAuthorById() throws Exception {
 
-        Author outputAuthor = new Author();
-        outputAuthor.setAuthorName("J.K. Rowling");
-        outputAuthor.setBiography("J.K. Rowling is a British author born on July 31, 1965. She is famous for writing the \"Harry Potter\" series, which gained worldwide acclaim and inspired a generation of readers. Her storytelling and imagination have left a lasting impact on literature, making her a literary icon.");
-        outputAuthor.setId(1);
+        Author author = new Author();
+        author.setId(1);
+        author.setFirstName("John");
+        author.setLastName("Smith");
+        author.setStreet("83rd Street");
+        author.setCity("Queens");
+        author.setState("NY");
+        author.setPostalCode("11370");
+        author.setPhone("646-212-9640");
+        author.setEmail("smith@mail.com");
 
-        Author outputAuthor2 = new Author();
-        outputAuthor2.setId(2);
-        outputAuthor2.setAuthorName("Haruki Murakami");
-        outputAuthor2.setBiography("Haruki Murakami is a celebrated Japanese novelist born on January 12, 1949. His captivating works, blending surrealism and existential themes, have earned him global acclaim and a dedicated fanbase.");
+        Author author2 = new Author();
+        author2.setId(2);
+        author2.setFirstName("NotJohn");
+        author2.setLastName("NotSmith");
+        author2.setStreet("MainSt");
+        author2.setCity("NotQueens");
+        author2.setState("OH");
+        author2.setPostalCode("Not11370");
+        author2.setPhone("000-000-0000");
+        author2.setEmail("not@mail.com");
 
 
-        String outputJson = mapper.writeValueAsString(outputAuthor);
+        String outputJson = mapper.writeValueAsString(author);
 
         mockMvc.perform(get("/authors/1"))
                 .andDo(print())
@@ -106,14 +137,31 @@ public class AuthorControllerTest {
     // Testing PUT /authors/{id}
     @Test
     public void shouldUpdateAuthor() throws Exception {
-       Author inputAuthor = new Author();
-       inputAuthor.setAuthorName("Mrs. Rowling");
-       inputAuthor.setBiography("J.K. Rowling is a British author born on July 31, 1965. She is famous for writing the \"Harry Potter\" series, which gained worldwide acclaim and inspired a generation of readers. Her storytelling and imagination have left a lasting impact on literature, making her a literary icon.");
-       inputAuthor.setId(3);
+        Author author = new Author();
+        author.setId(1);
+        author.setFirstName("John");
+        author.setLastName("Smith");
+        author.setStreet("83rd Street");
+        author.setCity("Queens");
+        author.setState("NY");
+        author.setPostalCode("11370");
+        author.setPhone("646-212-9640");
+        author.setEmail("smith@mail.com");
 
-        String inputJson = mapper.writeValueAsString(inputAuthor);
+        Author author2 = new Author();
+        author2.setId(2);
+        author2.setFirstName("NotJohn");
+        author2.setLastName("NotSmith");
+        author2.setStreet("MainSt");
+        author2.setCity("NotQueens");
+        author2.setState("OH");
+        author2.setPostalCode("Not11370");
+        author2.setPhone("000-000-0000");
+        author2.setEmail("not@mail.com");
 
-        mockMvc.perform(put("/authors/3")
+        String inputJson = mapper.writeValueAsString(author);
+
+        mockMvc.perform(put("/authors/1")
                                 .content(inputJson)
                                 .contentType(MediaType.APPLICATION_JSON)
                 )
